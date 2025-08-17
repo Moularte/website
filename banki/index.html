@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="title" content="Najlepsze konta oszczędnościowe – Oprocentowanie i oferty | TwojeFinanse24">
+	<meta name="description" content="Zobacz, które konto oszczędnościowe oferuje najwyższe oprocentowanie. Porównaj warunki i wybierz najlepszą opcję dla swoich oszczędności.">
+	<meta property="og:title" content="TwojeFinanse24">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://twojefinanse24">
+	<title>TwojeFinanse24</title>
+	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+<header id="masthead">
+	<h1><a href="/main/index.html" class="logo">TwojeFinanse24</a></h1>
+	<nav>
+		<ul id="nav-links" class="main-nav">
+			<li class="nav-link"><a href="#">Konta</a>
+				<div class="mega-dropdown">
+					<div class="dropdown-column">
+					  <h4>Konta osobiste</h4>
+					  <ul>
+						<li><a href="#">Konto dla dziecka</a></li>
+						<li><a href="#">Konto dla młodych</a></li>
+						<li><a href="#">Konto dla seniorów</a></li>
+						<li><a href="#">Konto Premium</a></li>
+						<li><a href="#">Darmowe Konto Osobiste</a></li>
+					  </ul>
+					</div>
+					<div class="dropdown-column">
+					  <h4>Konta firmowe</h4>
+					  <ul>
+						<li><a href="#">Konto dla JDG</a></li>
+						<li><a href="#">Konto dla spółek</a></li>
+						<li><a href="#">Konto walutowe</a></li>
+						<li><a href="#">Rachunek pomocniczy</a></li>
+					  </ul>
+					</div>
+				</div>
+			</li>
+			<li class="nav-link"><a href="#">Oszczędności</a>
+				<div class="mega-dropdown">
+					<div class="dropdown-column">
+						<ul>
+							<li><a href="/rankOfDeposits/index.html">Konta oszczędnościowe</a></li>
+							<li><a href="/rankOfDeposits/index.html">Lokaty</a></li>
+							<li><a href="#">Kalkulator oszczędności</a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="nav-link align-right"><a href="#">Kredyty</a>
+				<div class="mega-dropdown">
+					<div class="dropdown-column">
+					  <h4>Kredyty gotówkowe</h4>
+					  <ul>
+						<li><a href="#">Pożyczka 0% do 10 000 zł</a></li>
+						<li><a href="#">Kredyt konsolidacyjny</a></li>
+						<li><a href="#">Oferta dla nowych klientów</a></li>
+						<li><a href="#">Szybki kredyt online</a></li>
+					  </ul>
+					</div>
+					<div class="dropdown-column">
+					  <h4>Kredyty hipoteczne</h4>
+					  <ul>
+						<li><a href="#">Kredyt na zakup mieszkania</a></li>
+						<li><a href="#">Kredyt na budowę domu</a></li>
+						<li><a href="#">Oferta z niskim wkładem własnym</a></li>
+						<li><a href="#">Z dopłatą rządową</a></li>
+					  </ul>
+					</div>
+				</div>
+			</li>
+			<li class="nav-link"><a href="#">Banki</a></li>
+		</ul>
+		<!-- Ikonka hamburgera (widoczna tylko na małych ekranach) -->
+		<button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    		&#9776;
+		</button>
+	</nav>
+</header>
+
+<nav class="breadcrumb-container" aria-label="Breadcrumb">
+	<ul class="breadcrumb">
+		<li class="home_link"><a href="/main/index.html">TwojeFinanse24</a></li>
+		<li>Banki</li>
+	</ul>
+</nav>
+
+<div id="container">
+	<div class="banks_list">
+		<h1 class="banks_list_header">Banki</h1>
+		<ul class="gallery">
+			<li class="thumbnail anim1">
+				<img src="../images/alior_bank.webp" alt="">
+			</li>
+			<li class="thumbnail anim2">
+				<img src="../images/bank_bnp_paribas.webp" alt="">
+			</li>
+			<li class="thumbnail anim3">
+				<img src="../images/bank_millenium.webp" alt="">
+			</li>
+			<li class="thumbnail anim4">
+				<img src="../images/bank_polski_pko.webp" alt="">
+			</li>
+			<li class="thumbnail anim5">
+				<img src="../images/bank_santander.webp" alt="">
+			</li>
+			<li class="thumbnail anim6">
+				<img src="../images/bank_ing.webp" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="../images/credit-agricole.webp" alt="">
+			</li>
+			<li class="thumbnail soft-anim">		
+				<img src="../images/mbank.webp" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="../images/nest_bank.webp" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="../images/bank_pekao.webp" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="../images/velo_bank.webp" alt="">
+			</li>
+			<li class="thumbnail soft-anim">
+				<img src="../images/bank_pocztowy.webp" alt="">
+			</li>
+		</ul>
+	</div>
+	
+
+	<div id="overlay">
+		<img id="enlarged-img" src="" alt="">
+	</div>
+	
+</div>
+
+<footer id="footer">
+	<p>&copy; 2025 TwojeFinanse24. Wszelkie prawa zastrzeżone</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+document.querySelectorAll('.thumbnail').forEach(panel => {
+  panel.addEventListener('click', () => {
+    const img = panel.querySelector('img');
+    if (!img) return;
+
+    const rect = img.getBoundingClientRect();
+    const clone = img.cloneNode();
+    clone.classList.add('image-fly');
+
+    // Ustawienie pozycji startowej i wymiarów
+    clone.style.top = `${rect.top}px`;
+    clone.style.left = `${rect.left}px`;
+    clone.style.width = `${rect.width}px`;
+    clone.style.height = `${rect.height}px`;
+
+    document.body.appendChild(clone);
+
+    const overlay = document.getElementById('overlay');
+    overlay.style.display = 'block';
+
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    const targetX = centerX - rect.left - rect.width / 2;
+    const targetY = centerY - rect.top - rect.height / 2;
+
+    // Animacja powiększenia i obrotu
+    requestAnimationFrame(() => {
+      clone.style.transform = `translate(${targetX}px, ${targetY}px) scale(2) rotate(720deg)`;
+    });
+
+    // Zamknięcie po kliknięciu w overlay
+    overlay.addEventListener('click', () => {
+      clone.remove();
+      overlay.style.display = 'none';
+    }, { once: true });
+  });
+});
+</script>
+<script>
+	const hamburger = document.querySelector('.hamburger');
+	const navLinks = document.getElementById('nav-links');
+
+	hamburger.addEventListener('click', () => {
+  		navLinks.classList.toggle('show');
+	});
+</script>
+</body>
+</html>

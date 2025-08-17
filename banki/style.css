@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Nagłówek */
+#masthead {
+    background-color: #183153;
+    color: white;
+    padding: 20px;
+    text-align: center;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 2.5rem;
+}
+
+/* Nawigacja główna */
+#nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+	margin-right: 20px;
+	gap: 2rem;
+}
+
+.nav-link {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-link > a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+	font-size: large;
+}
+
+.nav-link {
+    position: relative;
+}
+
+/* Kontener rozwijanego menu */
+.mega-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+	transform: none;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    gap: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+}
+/* Jeśli jest klasa align-right – wyrównaj do prawej */
+.nav-link.align-right .mega-dropdown {
+    right: 0;
+    left: auto;
+}
+/* Każda kolumna */
+.dropdown-column {
+    min-width: 200px;
+}
+
+.dropdown-column h4 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.dropdown-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-column ul li {
+    margin: 5px 0;
+}
+
+.dropdown-column ul li a {
+    color: #0077cc;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+/* Pokaż rozwijane menu po najechaniu */
+.nav-link:hover .mega-dropdown {
+    display: flex;
+}
+/* Breadcrumb */
+.breadcrumb-container {
+    background-color: #e9ecef;
+    padding: 10px;
+}
+
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+.breadcrumb li::after {
+    content: ">";
+    margin: 0 5px;
+}
+
+.breadcrumb li:last-child::after {
+    content: "";
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #004080;
+}
+
+/* Layout */
+#container {
+    display: flex;
+	flex-direction: column;  
+    justify-content: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+.banks_list {
+    background-color: #f4f4f4;
+    padding: 32px;
+    margin: 40px;
+}
+.banks_list_header {
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    font-size: 36px;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* max 4 w rzędzie */
+    gap: 24px;
+    list-style-type: none;
+    margin: 0;
+    padding: 40px;
+ }
+.thumbnail {
+    box-sizing: border-box;
+    height: 180px;
+    width: 100%;
+    max-width: 250px;
+    margin: 32px;
+    justify-self: center;
+    background-color:#f9f9f9;
+    border-radius: 10px;
+    padding:1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.thumbnail img {
+    align-items: center;
+    object-fit: contain;
+    height:100%;
+    width:100%;
+}
+/* Stopka */
+#footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #353B50;
+    color: white;
+    margin-top: 40px;
+}
+
+/* --- Styl dla tabletów (<= 992px) --- */
+@media screen and (max-width: 992px) {
+	#container {
+	  flex-direction: column;
+	}
+  
+	.gallery {
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  /* --- Styl dla telefonów (<= 600px) --- */
+@media screen and (max-width: 600px) {
+	.logo {
+        font-size: 1.5rem;
+    }
+    header h1 {
+	  font-size: 1.5rem;
+	}
+  
+	#nav-links {
+	  flex-direction: column;
+	  gap: 10px;
+	}
+  
+	.gallery {
+        grid-template-columns: 1fr;
+    }
+  }
+
+  /* Ukryj hamburger domyślnie */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    margin-left: auto;
+}
+
+/* Styl nawigacji */
+#nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+/* Media query – dla ekranów max 768px (telefony) */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+        z-index: 1000;
+    }
+
+    #nav-links.show {
+        display: flex;
+    }
+
+    #nav-links a {
+        color: #fff;
+        padding: 10px 0;
+    }
+
+    .dropdown-list,
+    .sub-dropdown-list {
+        position: static;
+        display: none;
+    }
+
+    .nav-link:hover .dropdown-list {
+        display: block;
+    }
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: none;
+}
+  
+  /* Powiększany obraz w overlayu (jeśli używasz tej wersji) */
+  #overlay img {
+    max-width: 80vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+}
+.image-fly {
+    position: fixed;
+    z-index: 1001;
+    transition: transform 0.8s ease-in-out;
+    pointer-events: none;
+    will-change: transform;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    max-width: 80vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Obrót x2 + zoom przy kliknięciu */
+.animate-enlarge {
+    animation: zoomRotate 0.6s forwards;
+}
+
+@keyframes zoomRotate {
+    0% {
+        transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1) rotate(720deg);
+    }
+}
+
+.img-hover:hover {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite; /* ⬅️ to powoduje nieskończoną pętlę */
+  }
+
+.img-hover.pulse:hover {
+    animation-name: pulse;
+}
+/* Przykładowe animacje (dla zdjęć 1–5) */
+.anim1:hover { animation: pulse 1s infinite}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+@keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(2deg); }
+    100% { transform: rotate(0deg); }
+}
+/* @keyframes swing {
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+} */
+
+
+/* Animacja na hover miniaturki */
+.soft-anim img {
+    transition: transform 0.3s ease;
+}
+.soft-anim:hover img {
+    transform: scale(1.1) rotate(2deg);
+}
+  
+  /* Zoom In #1 */
+.anim2 {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.anim2:hover {
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+.anim3 img {
+	opacity: 1;
+}
+
+.anim3:hover img {
+	animation-name: flash;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.anim4 {
+    font-size: 2rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+  }
+  
+.anim4::after,
+.anim4::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #183153, #FAB800 );
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+  }
+  
+.anim4::before {
+    top: -5px;
+    transform-origin: left;
+}
+  
+.anim4:hover::after,
+.anim4:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* Shine */
+.anim5{
+	position: relative;
+}
+.anim5::before {
+	position: absolute;
+	top: 0;
+	left: -75%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 50%;
+	height: 100%;
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+	-webkit-transform: skewX(-25deg);
+	transform: skewX(-25deg);
+}
+.anim5:hover::before {
+	-webkit-animation: shine .75s;
+	animation: shine .75s;
+}
+@-webkit-keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+@keyframes shine {
+	100% {
+		left: 125%;
+	}
+}
+
+/* Circle */
+.anim6{
+	position: relative;
+}
+.anim6::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 2;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	background: rgba(255,255,255,.2);
+	border-radius: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	opacity: 0;
+}
+.anim6:hover::before {
+	-webkit-animation: circle .75s;
+	animation: circle .75s;
+}
+@-webkit-keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
+@keyframes circle {
+	0% {
+		opacity: 1;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		width: 200%;
+		height: 200%;
+		opacity: 0;
+	}
+}
