@@ -209,7 +209,7 @@ a{
 }
 .article-card h3,
 .advisory_article-card h3{
-    font-weight: 600px;
+    font-weight: 600;
     line-height: 120%;
     margin-bottom: 15px;
 }
@@ -405,7 +405,7 @@ footer .content .top{
     font-size: 17px;
     font-weight: bold;
     text-decoration: none;
-    transition: all 0.4 ease;    
+    transition: all 0.4s ease;    
  }
 
  .content .top .media-icons .icon{

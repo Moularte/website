@@ -15,10 +15,6 @@
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    
-    <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"></noscript> -->
     <script src='main.js' defer></script>
 </head> 
 <body>
@@ -235,28 +231,37 @@
                         <svg class="overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 400 250" preserveAspectRatio="none">
                             <defs>
-                            <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#0066cc" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="#003366" stop-opacity="0.6"/>
-                            </linearGradient>
+                                <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#0066cc" stop-opacity="0.4"/>
+                                    <stop offset="100%" stop-color="#003366" stop-opacity="0.6"/>
+                                </linearGradient>
+                                
+                                <!-- Gradient -->
+                                <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#1e3c72"/>
+                                <stop offset="100%" stop-color="#2a5298"/>
+                                </linearGradient>
+
+                                <!-- Białe wypełnienie -->
+                                <path id="white-fill" 
+                                    d="M 0 130 A 110 110 0 0 1 120 250 L 0 250 Z" 
+                                    fill="white" stroke="none" />
+
+                                <!-- Łuk z żółtą obwódką -->
+                                <path id="yellow-arc" 
+                                    d="M 0 125 A 115 115 0 0 1 125 250" 
+                                    fill="none" stroke="yellow" stroke-width="3" />                          
                             </defs>
                             
                             
-                            <!-- Gradient na całość -->
                             <rect width="100%" height="100%" fill="url(#blueGradient)" />
-
-                            <!-- wypełnienie białe bez obwódki -->
-                            <path d="M 0 130 A 110 110 0 0 1 120 250 L 0 250 Z"
-                                fill="white" stroke="none" />
-
-                            <!-- sam łuk z żółtą obwódką -->
-                            <path d="M 0 125 A 115 115 0 0 1 125 250"
-                                fill="none" stroke="yellow" stroke-width="3" />
+                            <use href="#white-fill" />
+                            <use href="#yellow-arc" />
                             
                             <foreignObject width="70" height="70" x="10" y="160">
-                                <image src="../images/mastercard_bezcenne_chwile.webp"
+                                <img src="../images/mastercard_bezcenne_chwile.webp"
                                     alt=""
-                                    style="width:100%; height:100%; object-fit:cover;"/>
+                                    style="width:100%; height:100%; object-fit:cover;">
                             </foreignObject>
                         </svg>
                     </div> 
@@ -275,21 +280,14 @@
                         <svg class="overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 400 250" preserveAspectRatio="none">
 
-                            <!-- Gradient na całość -->
                             <rect width="100%" height="100%" fill="url(#blueGradient)" />
-
-                            <!-- wypełnienie białe bez obwódki -->
-                            <path d="M 0 130 A 110 110 0 0 1 120 250 L 0 250 Z"
-                                fill="white" stroke="none" />
-
-                            <!-- sam łuk z żółtą obwódką -->
-                            <path d="M 0 125 A 115 115 0 0 1 125 250"
-                                fill="none" stroke="yellow" stroke-width="3" />
-
+                            <use href="#white-fill" />
+                            <use href="#yellow-arc" />
+                            
                             <foreignObject width="70" height="70" x="10" y="160">
-                                <image src="../images/velo_bank.webp"
+                                <img src="../images/velo_bank.webp"
                                     alt=""
-                                    style="width:100%; height:100%; object-fit:contain;"/>
+                                    style="width:100%; height:100%; object-fit:contain;">
                             </foreignObject>                    
                         </svg>
                     </header>
@@ -308,22 +306,14 @@
                         <svg class="overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 400 250" preserveAspectRatio="none">
 
-
-                            <!-- Gradient na całość -->
                             <rect width="100%" height="100%" fill="url(#blueGradient)" />
-
-                            <!-- wypełnienie białe bez obwódki -->
-                            <path d="M 0 130 A 110 110 0 0 1 120 250 L 0 250 Z"
-                                fill="white" stroke="none" />
-
-                            <!-- sam łuk z żółtą obwódką -->
-                            <path d="M 0 125 A 115 115 0 0 1 125 250"
-                                fill="none" stroke="yellow" stroke-width="3" />
+                            <use href="#white-fill" />
+                            <use href="#yellow-arc" />
 
                             <foreignObject width="70" height="70" x="10" y="160">
-                                <image src="../images/alior_bank.webp"
+                                <img src="../images/alior_bank.webp"
                                     alt=""
-                                    style="width:100%; height:100%; object-fit:cover;"/>
+                                    style="width:100%; height:100%; object-fit:cover;">
                             </foreignObject>
                         </svg>
                     </header>
@@ -343,22 +333,14 @@
                         <svg class="overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 400 250" preserveAspectRatio="none">
 
-
-                            <!-- Gradient na całość -->
                             <rect width="100%" height="100%" fill="url(#blueGradient)" />
-
-                            <!-- wypełnienie białe bez obwódki -->
-                            <path d="M 0 130 A 110 110 0 0 1 120 250 L 0 250 Z"
-                                fill="white" stroke="none" />
-
-                            <!-- sam łuk z żółtą obwódką -->
-                            <path d="M 0 125 A 115 115 0 0 1 125 250"
-                                fill="none" stroke="yellow" stroke-width="3" />
+                            <use href="#white-fill" />
+                            <use href="#yellow-arc" />
 
                             <foreignObject width="80" height="80" x="10" y="160">
-                                <image src="../images/mbank.webp"
+                                <img src="../images/mbank.webp"
                                     alt=""
-                                    style="width:100%; height:100%; object-fit:contain;"/>
+                                    style="width:100%; height:100%; object-fit:contain;">
                             </foreignObject>
                         </svg>
                     </header>
@@ -372,23 +354,10 @@
                         <img src="../images/article51.webp" width="640" height="640" alt="Kobieta w okularach i koszuli w paski siedzi przy stole w kuchni, korzystając z laptopa.">
                         <svg class="overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 400 250" preserveAspectRatio="none">
-                            <defs>
-                            <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#0066cc" stop-opacity="0.4"/>
-                                <stop offset="100%" stop-color="#003366" stop-opacity="0.6"/>
-                            </linearGradient>
-                            </defs>
                             
-                            <!-- Gradient na całość -->
                             <rect width="100%" height="100%" fill="url(#blueGradient)" />
-
-                            <!-- wypełnienie białe bez obwódki -->
-                            <path d="M 0 130 A 110 110 0 0 1 120 250 L 0 250 Z"
-                                fill="white" stroke="none" />
-
-                            <!-- sam łuk z żółtą obwódką -->
-                            <path d="M 0 125 A 115 115 0 0 1 125 250"
-                                fill="none" stroke="yellow" stroke-width="3" />
+                            <use href="#white-fill" />
+                            <use href="#yellow-arc" />
 
                             <!-- Napis wyśrodkowany pionowo -->
                             <text x="50" y="200"
@@ -413,23 +382,15 @@
                         <img src="../images/article6.webp" width="640" height="427" alt="Biała skarbonka w kształcie świnki z pomarańczowymi akcentami i graficzną siecią połączeń, obok niej okrąg z napisem 5,5%.">
                         <svg class="overlay" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 400 250" preserveAspectRatio="none">
-
-
-                            <!-- Gradient na całość -->
+                            
                             <rect width="100%" height="100%" fill="url(#blueGradient)" />
-
-                            <!-- wypełnienie białe bez obwódki -->
-                            <path d="M 0 130 A 110 110 0 0 1 120 250 L 0 250 Z"
-                                fill="white" stroke="none" />
-
-                            <!-- sam łuk z żółtą obwódką -->
-                            <path d="M 0 125 A 115 115 0 0 1 125 250"
-                                fill="none" stroke="yellow" stroke-width="3" />
-
+                            <use href="#white-fill" />
+                            <use href="#yellow-arc" />
+                            
                             <foreignObject width="80" height="80" x="10" y="160">
-                                <image src="../images/bank_ing.webp"
+                                <img src="../images/bank_ing.webp"
                                     alt=""
-                                    style="width:100%; height:100%; object-fit:contain;"/>
+                                    style="width:100%; height:100%; object-fit:contain;">
                             </foreignObject>
                         </svg>
                     </header>
