@@ -8,12 +8,11 @@ const showMenu = (toggleId, navId) =>{
     });
 };
 
-
-
-// document.querySelectorAll(".faq-question").forEach(btn => {
-//             btn.addEventListener("click", () => {
-//                 btn.parentElement.classList.toggle("active");
-//             });
-//         });
-
 showMenu('nav-toggle','nav-menu');
+
+document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+    btn.parentElement.classList.toggle("active");
+    });
+});
+
